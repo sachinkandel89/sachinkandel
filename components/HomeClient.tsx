@@ -51,7 +51,7 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
       }
     }
 
-    const sections = ["home", "journal", "about", "contact"]
+    const sections = ["home", "about", "contact"]
       .map((id) => document.getElementById(id))
       .filter(Boolean) as HTMLElement[];
 
@@ -251,7 +251,7 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
         </div>
       </section>
 
-      <section id="journal" className="w-full bg-[#F3EFE7] px-4 py-20 sm:px-6 sm:py-24 md:pl-32 lg:px-8 lg:pl-36 lg:py-28">
+      <section id="home" className="w-full bg-[#F3EFE7] px-4 py-20 sm:px-6 sm:py-24 md:pl-32 lg:px-8 lg:pl-36 lg:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 sm:mb-12 flex flex-wrap items-end justify-between gap-4 border-b border-[#22201c]/15 pb-6">
             <div>
