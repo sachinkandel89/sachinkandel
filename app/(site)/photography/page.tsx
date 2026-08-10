@@ -1,5 +1,3 @@
-import fs from "fs";
-import path from "path";
 import PhotographyGallery from "@/components/PhotographyGallery";
 
 export const revalidate = 60;
@@ -14,19 +12,65 @@ type DriveImage = {
 
 type ImagesData = Record<string, DriveImage[]>;
 
-function getImages(): ImagesData {
-    const filePath = path.join(process.cwd(), "public", "images.json");
-
-    if (!fs.existsSync(filePath)) {
-        return {};
-    }
-
-    const raw = fs.readFileSync(filePath, "utf-8");
-    return JSON.parse(raw);
+interface ManifestImage {
+    name: string;
+    path: string;
+    size: number;
+    updatedAt: string;
 }
 
-export default function PhotographyPage() {
-    const images = getImages();
+interface ManifestCategory {
+    category: string;
+    count: number;
+    images: ManifestImage[];
+}
+
+interface ManifestData {
+    generatedAt: string;
+    count: number;
+    categories: ManifestCategory[];
+}
+
+const MANIFEST_URL =
+    "https://cdn.jsdelivr.net/gh/sachinkandel89/sk_assets@master/manifest.json";
+const CDN_BASE_URL =
+    "https://cdn.jsdelivr.net/gh/sachinkandel89/sk_assets@master/";
+
+async function getImages(): Promise<ImagesData> {
+    try {
+        const res = await fetch(MANIFEST_URL, {
+            next: { revalidate: 60 },
+        });
+
+        if (!res.ok) {
+            console.error("Failed to fetch manifest:", res.status, res.statusText);
+            return {};
+        }
+
+        const data: ManifestData = await res.json();
+        const imagesData: ImagesData = {};
+
+        if (Array.isArray(data.categories)) {
+            for (const cat of data.categories) {
+                imagesData[cat.category] = (cat.images || []).map((img) => ({
+                    id: img.path,
+                    title: img.name.replace(/\.[^/.]+$/, ""),
+                    filename: img.name,
+                    uploadedAt: img.updatedAt,
+                    url: `${CDN_BASE_URL}${encodeURI(img.path)}`,
+                }));
+            }
+        }
+
+        return imagesData;
+    } catch (error) {
+        console.error("Error fetching images manifest:", error);
+        return {};
+    }
+}
+
+export default async function PhotographyPage() {
+    const images = await getImages();
     const categories = Object.keys(images);
 
     return (
@@ -46,3 +90,4 @@ export default function PhotographyPage() {
         </main>
     );
 }
+
