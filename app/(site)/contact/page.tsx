@@ -202,10 +202,20 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="#"
+                  href="https://www.tiktok.com/@sachin.kandel7"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-fit border-b border-transparent pb-0.5 transition-colors hover:border-[#22201c]"
                 >
-                  LinkedIn
+                  Tiktok
+                </a>
+                <a
+                  href="https://www.youtube.com/channel/UCcJOh7WbGlGIOHMvAfE5W1Q"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-fit border-b border-transparent pb-0.5 transition-colors hover:border-[#22201c]"
+                >
+                  Youtube
                 </a>
               </div>
             </div>

@@ -2,13 +2,7 @@
 
 import { useState, useEffect, FormEvent } from "react";
 import Link from "next/link";
-
-const socialLinks = [
-  { label: "INSTAGRAM", href: "https://www.instagram.com/sachin_kandel45/" },
-  { label: "TIKTOK", href: "https://www.tiktok.com/" },
-  { label: "TWITTER", href: "https://twitter.com/" },
-  { label: "YOUTUBE", href: "#" },
-];
+import { socialLinks } from "@/app/(site)/about/page";
 
 type FeaturedPost = {
   title: string;
@@ -395,7 +389,7 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
 
             <div className="relative min-h-[420px] lg:min-h-[580px] lg:col-span-5 bg-[#efe9dd] overflow-hidden group">
               <img
-                src="/SachinProf.jpg"
+                src="/profile.jpg"
                 alt="Sachin Kandel"
                 className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.05] transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
               />
@@ -499,17 +493,12 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                 <p className="font-[var(--font-display)] text-[20px] text-[#22201c]">Kathmandu, Nepal</p>
               </div>
               <div>
-                <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#a3947c]">Response time</p>
-                <p className="text-[15px] leading-relaxed text-[#4a4740]">
-                  I usually reply within two to three days. For urgent matters, mention it in the subject line.
-                </p>
-              </div>
-              <div>
                 <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#a3947c]">Elsewhere</p>
                 <div className="flex flex-col gap-2 text-[15px] text-[#22201c]">
                   <a href="https://www.instagram.com/sachin_kandel45/" target="_blank" rel="noopener noreferrer" className="w-fit border-b border-transparent pb-0.5 transition-colors hover:border-[#22201c]">Instagram</a>
+                  <a href="https://www.youtube.com/channel/UCcJOh7WbGlGIOHMvAfE5W1Q" target="_blank" rel="noopener noreferrer" className="w-fit border-b border-transparent pb-0.5 transition-colors hover:border-[#22201c]">Youtube</a>
                   <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="w-fit border-b border-transparent pb-0.5 transition-colors hover:border-[#22201c]">Twitter / X</a>
-                  <a href="#" className="w-fit border-b border-transparent pb-0.5 transition-colors hover:border-[#22201c]">LinkedIn</a>
+                  <a href="https://www.tiktok.com/@sachin.kandel7" target="_blank" rel="noopener noreferrer" className="w-fit border-b border-transparent pb-0.5 transition-colors hover:border-[#22201c]">Tiktok</a>
                 </div>
               </div>
             </div>

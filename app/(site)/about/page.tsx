@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-const socialLinks = [
+export const socialLinks = [
   { label: "INSTAGRAM", href: "https://www.instagram.com/sachin_kandel45/" },
-  { label: "TIKTOK", href: "https://www.tiktok.com/" },
+  { label: "TIKTOK", href: "https://www.tiktok.com/@sachin.kandel7" },
   { label: "TWITTER", href: "https://twitter.com/" },
-  { label: "YOUTUBE", href: "#" },
+  { label: "YOUTUBE", href: "https://www.youtube.com/channel/UCcJOh7WbGlGIOHMvAfE5W1Q" },
 ];
 
 export default function AboutPage() {
@@ -90,7 +90,7 @@ export default function AboutPage() {
           {/* Right Dramatic Photo Column (5 cols) */}
           <div className="relative min-h-[420px] lg:min-h-[580px] lg:col-span-5 bg-[#efe9dd] overflow-hidden group">
             <img
-              src="/SachinProf.jpg"
+              src="/profile.jpg"
               alt="Sachin Kandel"
               className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.05] transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
             />
