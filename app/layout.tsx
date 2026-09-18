@@ -34,8 +34,8 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Wayfare — Travel Stories",
-  description: "Real stories from the road.",
+  title: "Sachin Kandel - Travel & Blogs",
+  description: "Sharing resources and experience with the means of writing",
 };
 
 export default function RootLayout({
