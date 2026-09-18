@@ -54,7 +54,7 @@ export async function generateMetadata({
   const post: Post | null = await client.fetch(POST_QUERY, { slug });
   if (!post) return { title: "Not found" };
   return {
-    title: `${post.title} — Wayfare`,
+    title: `${post.title} — Sachin Kandel`,
     description: post.excerpt,
   };
 }
