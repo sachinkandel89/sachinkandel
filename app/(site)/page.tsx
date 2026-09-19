@@ -19,10 +19,7 @@ export default async function HomePage() {
 
   const featured = heroPosts?.[0];
 
-  const imageUrl = featured?.mainImage
-    ? urlFor(featured.mainImage).width(1200).height(1400).url()
-    : "https://i.pinimg.com/1200x/6f/22/14/6f22140232ff4713d04dea85e24cfc08.jpg";
-
+  const imageUrl = "/profile.jpg"
   const featuredThumb = featured?.mainImage
     ? urlFor(featured.mainImage).width(200).height(240).url()
     : null;
