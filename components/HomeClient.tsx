@@ -3,11 +3,8 @@
 import { useState, useEffect, FormEvent } from "react";
 import Link from "next/link";
 
-export const socialLinks = [
-  { label: "INSTAGRAM", href: "https://www.instagram.com/sachin_kandel45/" },
-  { label: "TIKTOK", href: "https://www.tiktok.com/@sachin.kandel7" },
-  { label: "YOUTUBE", href: "https://www.youtube.com/channel/UCcJOh7WbGlGIOHMvAfE5W1Q" },
-];
+import { socialLinks } from "@/lib/constants";
+
 
 type FeaturedPost = {
     title: string;
@@ -116,16 +113,16 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
     };
 
     return (
-        <main className="w-full bg-[#F3EFE7] font-[var(--font-geist-sans)] text-[#22201c]">
-            <section id="home" className="relative min-h-screen w-full overflow-hidden">
-                <div className="hidden md:block relative min-h-screen">
-                    <main className="min-h-screen w-full bg-[#F3EFE7] text-[#22201c] p-12 font-[var(--font-geist-sans)]">
+        <main className="w-full bg-[#F3EFE7] font-[var(--font-sans)] text-[#22201c]">
+            <section id="home" className="relative min-h-screen w-full overflow-hidden animate-fadeIn">
+                <div className="relative min-h-screen">
+                    <div className="min-h-screen w-full bg-[#F3EFE7] text-[#22201c] p-4 sm:p-8 lg:p-12 font-[var(--font-sans)]">
                         <div className="relative mx-auto flex max-w-6xl flex-col overflow-hidden">
                             {/* Main Grid Content */}
                             <div className="grid grid-cols-1 lg:grid-cols-12">
                                 {/* Left Editorial Grid Column (7 cols) */}
                                 <div className="flex flex-col border-b lg:border-b-0 lg:border-r border-[#22201c]/15 lg:col-span-7">
-                                    <div className="border-b border-[#22201c]/15 p-6 sm:p-8 lg:p-10">
+                                    <div className="border-b border-[#22201c]/15 p-5 sm:p-8 lg:p-10">
                                         <h1 className="font-[var(--font-display)] text-2xl sm:text-3xl leading-snug font-medium italic text-[#22201c] mb-4">
                                             I write, wander, and capture the quiet beauty of the world.
                                         </h1>
@@ -135,7 +132,7 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                                     </div>
 
                                     {/* Box 2: JOURNEY & EXPLORATIONS */}
-                                    <div className="border-b border-[#22201c]/15 p-6 sm:p-8 lg:p-10">
+                                    <div className="border-b border-[#22201c]/15 p-5 sm:p-8 lg:p-10">
                                         <p className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.28em] text-[#a3947c] mb-4">
                                             JOURNEY &amp; EXPLORATIONS
                                         </p>
@@ -160,11 +157,11 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                                     </div>
 
                                     {featured && (
-                                        <>
-                                            <p className="tracking-[0.5rem] font-black text-black/20 px-4.5 pt-5">FEATURED BLOG</p>
-                                            <div className="flex w-90 gap-4 rounded-2xl border border-white/40 bg-[#F3EFE7]/95 p-4.5">
+                                        <div className="p-4 sm:p-6">
+                                            <p className="tracking-[0.3rem] font-bold text-black/30 text-[10px] uppercase mb-3">FEATURED BLOG</p>
+                                            <div className="flex flex-col sm:flex-row w-full max-w-md gap-4 rounded-2xl border border-black/10 bg-[#F3EFE7]/95 p-4 transition-opacity duration-300 hover:opacity-90">
                                                 {featuredThumb && (
-                                                    <img src={featuredThumb} alt={featured.title} className="h-32 w-28 flex-shrink-0 rounded-xl object-cover" />
+                                                    <img src={featuredThumb} alt={featured.title} className="h-32 w-full sm:w-28 flex-shrink-0 rounded-xl object-cover" />
                                                 )}
                                                 <div className="flex flex-col justify-between py-0.5">
                                                     <div>
@@ -187,7 +184,7 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                                                     {featured.slug && (
                                                         <Link
                                                             href={`/blogs/${featured.slug}`}
-                                                            className="mt-2 w-fit rounded-full bg-[#14140F] px-4 py-1.5 text-[11px] font-medium text-white hover:bg-black/80 transition-colors flex items-center gap-1"
+                                                            className="mt-3 w-fit rounded-full bg-[#14140F] px-4 py-1.5 text-[11px] font-medium text-white hover:bg-black/80 transition-colors flex items-center gap-1"
                                                         >
                                                             <span>Read story</span>
                                                             <span>&rarr;</span>
@@ -195,17 +192,16 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                                                     )}
                                                 </div>
                                             </div>
-
-                                        </>
+                                        </div>
                                     )}
                                 </div>
 
                                 {/* Right Dramatic Photo Column (5 cols) */}
-                                <div className="relative min-h-[420px] lg:min-h-[580px] lg:col-span-5 bg-[#efe9dd] overflow-hidden group">
+                                <div className="relative min-h-[340px] sm:min-h-[420px] lg:min-h-[580px] lg:col-span-5 bg-[#efe9dd] overflow-hidden group">
                                     <img
                                         src="/profile.jpg"
                                         alt="Sachin Kandel"
-                                        className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.05] transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                                        className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.05] transition-opacity duration-500 group-hover:opacity-90"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                                     <div className="absolute bottom-6 left-6 right-6 text-white text-[11px] uppercase tracking-[0.2em] font-medium flex justify-between items-center pointer-events-none">
@@ -216,7 +212,7 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                             </div>
 
                             {/* Bottom Editorial Footer */}
-                            <div className="flex flex-wrap items-center justify-between border-t border-[#22201c]/15 px-6 py-5 sm:px-8 sm:py-6 gap-4">
+                            <div className="flex flex-wrap items-center justify-between border-t border-[#22201c]/15 px-4 py-4 sm:px-8 sm:py-6 gap-4">
                                 <div className="flex flex-wrap gap-4 sm:gap-6 text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.2em] text-[#22201c]">
                                     {socialLinks.map((link) => (
                                         <a
@@ -238,12 +234,12 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                                 </Link>
                             </div>
                         </div>
-                    </main>
+                    </div>
 
                 </div>
             </section>
 
-            <section id="home" className="w-full bg-[#F3EFE7] px-4 sm:px-6 md:pl-32 lg:px-8 lg:pl-36 py-10">
+            <section id="journal" className="w-full bg-[#F3EFE7] px-4 sm:px-6 lg:px-8 py-10">
                 <div className="mx-auto max-w-6xl">
                     <div className="mb-10 sm:mb-12 flex flex-wrap items-end justify-between gap-4 border-b border-[#22201c]/15 pb-6">
                         <div>
@@ -264,7 +260,7 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                             {recentPosts.map((post) => (
                                 <div
                                     key={post.id}
-                                    className="group flex flex-col justify-between overflow-hidden rounded-[20px] border border-[#22201c]/15 bg-[#f7efe3] p-5 sm:p-6 shadow-[0_10px_30px_rgba(34,32,28,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                                    className="group flex flex-col justify-between overflow-hidden rounded-[20px] border border-[#22201c]/15 bg-[#f7efe3] p-5 sm:p-6 shadow-[0_10px_30px_rgba(34,32,28,0.04)] transition-opacity duration-300 hover:opacity-90"
                                 >
                                     <div>
                                         {post.imageUrl && (
@@ -272,7 +268,7 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                                                 <img
                                                     src={post.imageUrl}
                                                     alt={post.title}
-                                                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                    className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
                                                 />
                                             </div>
                                         )}
@@ -298,7 +294,7 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                                         {post.slug && (
                                             <Link
                                                 href={`/blogs/${post.slug}`}
-                                                className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#22201c] group-hover:translate-x-1 transition-transform flex items-center gap-1"
+                                                className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#22201c] hover:opacity-70 transition-opacity flex items-center gap-1"
                                             >
                                                 Read story &rarr;
                                             </Link>
@@ -314,7 +310,7 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                     <div className="mt-10 sm:mt-12 text-center">
                         <Link
                             href="/blogs"
-                            className="inline-flex items-center gap-2 rounded-full border border-[#22201c]/20 bg-[#22201c] px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-all hover:bg-black hover:scale-105"
+                            className="inline-flex items-center gap-2 rounded-full border border-[#22201c]/20 bg-[#22201c] px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-black/90"
                         >
                             <span>EXPLORE ALL JOURNAL POSTS</span>
                             <span>&rarr;</span>
@@ -323,7 +319,7 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                 </div>
             </section>
 
-            <section id="contact" className="w-full bg-[#F3EFE7] px-4 py-20 sm:px-6 sm:py-24 md:pl-32 lg:px-8 lg:pl-36 lg:py-28">
+            <section id="contact" className="w-full bg-[#F3EFE7] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
                 <div className="mx-auto max-w-6xl">
                     <div className="mb-6 text-center">
                         <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#a3947c]">GET IN TOUCH</p>
@@ -373,7 +369,7 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                                 className="group mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#22201c] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#3a3730] disabled:opacity-60 sm:w-fit sm:justify-start"
                             >
                                 {status === "sending" ? "Sending..." : "Send message"}
-                                <svg className="transition-transform duration-200 group-hover:translate-x-1" width="14" height="14" viewBox="0 0 24 24" fill="none">
+                                <svg className="transition-opacity duration-200 group-hover:opacity-70" width="14" height="14" viewBox="0 0 24 24" fill="none">
                                     <path d="M5 12h14m0 0-6-6m6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </button>

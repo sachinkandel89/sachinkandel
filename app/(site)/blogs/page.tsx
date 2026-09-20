@@ -20,7 +20,7 @@ export default async function PostsPage() {
     ]);
 
     return (
-        <main className="min-h-screen px-6 md:pl-36 md:pr-10 pt-10 pb-24 max-w-7xl">
+        <main className="min-h-screen px-4 sm:px-6 lg:px-8 pt-10 pb-24 max-w-7xl mx-auto">
             <BlogPostsSection posts={posts} categories={categories} />
         </main>
     );

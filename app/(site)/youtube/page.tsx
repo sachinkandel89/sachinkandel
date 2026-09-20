@@ -57,7 +57,7 @@ export default async function YouTubePage() {
 
   return (
     <main className="min-h-screen w-full bg-[#F3EFE7] text-[#22201c]">
-      <div className="relative mx-auto min-h-screen w-full max-w-6xl px-6 py-28 md:pl-36 md:pr-10 lg:pl-40">
+      <div className="relative mx-auto min-h-screen w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-12 pb-24">
         <div className="mb-14">
           <h1 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl leading-tight">
             Featured videos & playlists

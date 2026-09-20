@@ -241,7 +241,7 @@ export default async function PostPage({
             href="/blogs"
             className="inline-flex items-center gap-2 text-sm text-[#14140F]/50 hover:text-[#14140F] transition-colors group"
           >
-            <span className="group-hover:-translate-x-1 transition-transform">←</span>
+            <span className="transition-opacity group-hover:opacity-70">←</span>
             <span>Back to all stories</span>
           </Link>
         </div>

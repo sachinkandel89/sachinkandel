@@ -26,7 +26,7 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
                         <img
                             src={urlFor(img).width(600).height(600).url()}
                             alt={img.alt ?? `Gallery photo ${i + 1}`}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            className="w-full h-full object-cover transition-opacity duration-300 hover:opacity-85"
                         />
                     </button>
                 ))}
