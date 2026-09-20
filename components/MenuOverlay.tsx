@@ -11,8 +11,6 @@ const links = [
   { href: "/blogs", label: "Blog", sectionId: null },
   { href: "/youtube", label: "YouTube", sectionId: null },
   { href: "/photography", label: "Photography", sectionId: null },
-  { href: "/travel", label: "Travel", sectionId: null },
-  { href: "/resources", label: "Resources", sectionId: null },
   { href: "/work-with-me", label: "Work With Me", sectionId: null },
   { href: "/contact", label: "Contact", sectionId: null },
 ];
