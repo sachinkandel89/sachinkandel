@@ -75,10 +75,10 @@ export default async function PhotographyPage() {
 
     return (
         <main className="min-h-screen w-full bg-[#F3EFE7] text-[#22201c]">
-            <div className="relative mx-auto min-h-screen w-full max-w-7xl px-6 py-28 md:pl-36 md:pr-10 lg:pl-40">
+            <div className="relative mx-auto min-h-screen w-full max-w-7xl px-6 py-20 md:pl-36 md:pr-10 lg:pl-40">
                 <div className="mb-12">
-                    <h1 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl leading-tight">
-                        Moments
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl text-black/30 font-light">
+                        SAJHA PHOTOGRAPHY
                     </h1>
                     <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[#4f493f]">
                         A collection of places, people, and quiet Moments

@@ -1,15 +1,8 @@
 import Link from "next/link";
 
-export const socialLinks = [
-  { label: "INSTAGRAM", href: "https://www.instagram.com/sachin_kandel45/" },
-  { label: "TIKTOK", href: "https://www.tiktok.com/@sachin.kandel7" },
-  { label: "TWITTER", href: "https://twitter.com/" },
-  { label: "YOUTUBE", href: "https://www.youtube.com/channel/UCcJOh7WbGlGIOHMvAfE5W1Q" },
-];
-
 export default function AboutPage() {
   return (
-    <main className="min-h-screen w-full bg-[#F3EFE7] px-4 py-16 text-[#22201c] sm:px-6 sm:py-20 md:pl-32 lg:px-8 lg:pl-36 lg:py-24 font-[var(--font-geist-sans)]">
+    <main className="min-h-screen w-full bg-[#F3EFE7] px-4 text-[#22201c] font-[var(--font-geist-sans)]">
       <div className="relative mx-auto flex max-w-6xl flex-col overflow-hidden rounded-[20px] border border-[#22201c]/20 bg-[#f7efe3] shadow-[0_20px_60px_rgba(34,32,28,0.08)] sm:rounded-[28px]">
         {/* Top Editorial Header */}
         <div className="flex flex-wrap items-center justify-between border-b border-[#22201c]/15 px-6 py-5 sm:px-8 sm:py-6">

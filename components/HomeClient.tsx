@@ -2,7 +2,12 @@
 
 import { useState, useEffect, FormEvent } from "react";
 import Link from "next/link";
-import { socialLinks } from "@/app/(site)/about/page";
+
+export const socialLinks = [
+  { label: "INSTAGRAM", href: "https://www.instagram.com/sachin_kandel45/" },
+  { label: "TIKTOK", href: "https://www.tiktok.com/@sachin.kandel7" },
+  { label: "YOUTUBE", href: "https://www.youtube.com/channel/UCcJOh7WbGlGIOHMvAfE5W1Q" },
+];
 
 type FeaturedPost = {
     title: string;
@@ -112,10 +117,9 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
 
     return (
         <main className="w-full bg-[#F3EFE7] font-[var(--font-geist-sans)] text-[#22201c]">
-
             <section id="home" className="relative min-h-screen w-full overflow-hidden">
                 <div className="hidden md:block relative min-h-screen">
-                    <main className="min-h-screen w-full bg-[#F3EFE7] text-[#22201c] sm:px-6 sm:py-20 md:pl-32 lg:px-8 lg:pl-36 lg:py-24 font-[var(--font-geist-sans)]">
+                    <main className="min-h-screen w-full bg-[#F3EFE7] text-[#22201c] p-12 font-[var(--font-geist-sans)]">
                         <div className="relative mx-auto flex max-w-6xl flex-col overflow-hidden">
                             {/* Main Grid Content */}
                             <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -239,7 +243,7 @@ export default function HomeClient({ imageUrl, featuredThumb, featured, recentPo
                 </div>
             </section>
 
-            <section id="home" className="w-full bg-[#F3EFE7] px-4 py-20 sm:px-6 sm:py-24 md:pl-32 lg:px-8 lg:pl-36 lg:py-28">
+            <section id="home" className="w-full bg-[#F3EFE7] px-4 sm:px-6 md:pl-32 lg:px-8 lg:pl-36 py-10">
                 <div className="mx-auto max-w-6xl">
                     <div className="mb-10 sm:mb-12 flex flex-wrap items-end justify-between gap-4 border-b border-[#22201c]/15 pb-6">
                         <div>

@@ -5,41 +5,46 @@ import Link from "next/link";
 import MenuOverlay from "@/components/MenuOverlay";
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
-  return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 md:px-10 transition-all duration-300 ${isScrolled
-        ? "bg-white/90 backdrop-blur-md py-4"
-        : "bg-transparent py-5 md:py-6"
-        }`}
-    >
-      <Link href="/" className="relative z-10">
-        <span
-          className="cursor-pointer text-[24px] md:text-[32px] leading-none text-[#22201c] font-medium"
-          style={{ fontFamily: "var(--font-caveat), cursive" }}
-        >
-          Sachin Kandel
-        </span>
-      </Link>
-      <div className="md:hidden">
-        <MenuOverlay />
-      </div>
-    </header>
-  );
+    return (
+        <header className="flex flex-wrap items-center justify-between px-5 pt-5">
+            <div className="flex items-center gap-6 text-[11px] font-medium uppercase tracking-[0.2em] text-[#22201c]">
+                <Link href="/" className="hover:opacity-60 transition-opacity">
+                    HOME
+                </Link>
+                <span className="opacity-30">/</span>
+                <Link href="/blogs" className="hover:opacity-60 transition-opacity">
+                    BLOGS
+                </Link>
+                <span className="opacity-30">/</span>
+                <Link href="/photography" className="hover:opacity-60 transition-opacity">
+                    PHOTOGRAPHY
+                </Link>
+                <span className="opacity-30">/</span>
+                <Link href="/youtube" className="hover:opacity-60 transition-opacity">
+                    youtube
+                </Link>
+                <span className="opacity-30">/</span>
+                <Link href="/contact" className="hover:opacity-60 transition-opacity">
+                    CONTACT
+                </Link>
+            </div>
+        </header>
+    );
 }
